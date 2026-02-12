@@ -1,46 +1,19 @@
-import { ScrollView, Text, View } from "react-native";
+import { useState } from "react";
+import { Button, Text, View } from "react-native";
 const logoImg = require('@/assets/images/icon.png')
 
 export default function Index() {
+  const [message, setMessage] = useState("Message");
   return (
     <View
       style={{
         flex: 1,
-        padding: 20,
-        paddingBottom: 50,
+        alignItems: "center",
+        justifyContent: "center"
       }}
     >
-      <ScrollView>
-      <Text style={{alignItems: "center", justifyContent: "center", alignContent: "center"}}>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloremque perspiciatis, excepturi facere consequatur animi fuga ea itaque vel ab consectetur tempore officia consequuntur sequi qui distinctio. Deserunt, id consequatur.
-      </Text>
-      </ScrollView>
-  </View>
+      <Text style={{margin: 30}}>{message}</Text>
+      <Button title="Click Me" color="#f704ae" onPress={() => console.log("Hello")} disabled={false}/>
+    </View>
   );
 }
