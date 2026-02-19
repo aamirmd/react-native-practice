@@ -1,4 +1,5 @@
-import { Alert, Button, View } from "react-native";
+import { Greet } from "@/components/Greet";
+import { View } from "react-native";
 // const logoImg = require("@/assets/images/icon.png");
 
 export default function Index() {
@@ -10,31 +11,8 @@ export default function Index() {
                 backgroundColor: "plum",
             }}
         >
-            <Button
-                title="Alert 1"
-                onPress={() => {
-                    Alert.alert("Invalid data", "Incorrect email format");
-                }}
-            />
-            <Button
-                title="Alert 2"
-                onPress={() => {
-                    Alert.alert("Invalid data", "Incorrect email format", [
-                        {
-                            text: "Cancel",
-                            onPress: () => console.log("Pressed cancel"),
-                        },
-                        {
-                            text: "OK",
-                            onPress: () => console.log("Pressed ok"),
-                        },
-                        {
-                            text: "Continue",
-                            onPress: () => console.log("Continue pressed"),
-                        },
-                    ]);
-                }}
-            />
+            <Greet name="Ahmed" />
+            <Greet name="Abdullah" />
         </View>
     );
 }
