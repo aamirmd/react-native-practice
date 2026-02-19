@@ -1,9 +1,7 @@
-import { useState } from "react";
-import { ActivityIndicator, Button, StatusBar, View } from "react-native";
+import { Alert, Button, View } from "react-native";
 // const logoImg = require("@/assets/images/icon.png");
 
 export default function Index() {
-    const [loading, setLoading] = useState(false);
     return (
         <View
             style={{
@@ -12,20 +10,30 @@ export default function Index() {
                 backgroundColor: "plum",
             }}
         >
-            <StatusBar />
-            <ActivityIndicator />
-            <ActivityIndicator size="large" />
-            <ActivityIndicator size="large" color="green" />
             <Button
-                title={loading ? "Loading" : "Not loading"}
+                title="Alert 1"
                 onPress={() => {
-                    setLoading(!loading);
+                    Alert.alert("Invalid data", "Incorrect email format");
                 }}
             />
-            <ActivityIndicator
-                size="large"
-                color="yellow"
-                animating={loading}
+            <Button
+                title="Alert 2"
+                onPress={() => {
+                    Alert.alert("Invalid data", "Incorrect email format", [
+                        {
+                            text: "Cancel",
+                            onPress: () => console.log("Pressed cancel"),
+                        },
+                        {
+                            text: "OK",
+                            onPress: () => console.log("Pressed ok"),
+                        },
+                        {
+                            text: "Continue",
+                            onPress: () => console.log("Continue pressed"),
+                        },
+                    ]);
+                }}
             />
         </View>
     );
