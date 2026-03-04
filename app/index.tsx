@@ -17,7 +17,8 @@ export default function Index() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 60,
+        paddingHorizontal: 10,
+        paddingVertical: 50,
         backgroundColor: "pink",
     },
 
@@ -25,9 +26,13 @@ const styles = StyleSheet.create({
         color: "green",
     },
     box: {
-        width: 100,
+        width: "45%",
         height: 100,
         padding: 5,
+        borderWidth: 2,
+        borderRadius: 5,
+        borderColor: "yellow",
+        marginVertical: 10,
     },
     blue: {
         backgroundColor: "blue",
