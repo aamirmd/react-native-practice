@@ -7,7 +7,7 @@ export default function Index() {
             <View style={[styles.box, styles.blue]}>
                 <Text style={styles.text}>Light blue</Text>
             </View>
-            <View style={[styles.box, styles.red]}>
+            <View style={[styles.box, styles.red, styles.androidShadow]}>
                 <Text style={styles.text}>Light Green</Text>
             </View>
         </View>
@@ -39,5 +39,13 @@ const styles = StyleSheet.create({
     },
     red: {
         backgroundColor: "red",
+    },
+    boxShadow: {
+        shadowColor: "black",
+        shadowOffset: { width: 6, height: 6 },
+        shadowOpacity: 0.6,
+    },
+    androidShadow: {
+        elevation: 50,
     },
 });
