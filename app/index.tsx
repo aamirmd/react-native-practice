@@ -10,6 +10,11 @@ export default function Index() {
             <View style={[styles.box, styles.red, styles.androidShadow]}>
                 <Text style={styles.text}>Light Green</Text>
             </View>
+            <View style={styles.darkMode}>
+                <Text style={styles.darkModeText}>
+                    Some text in <Text style={styles.bold}>bold</Text>
+                </Text>
+            </View>
         </View>
     );
 }
@@ -48,4 +53,7 @@ const styles = StyleSheet.create({
     androidShadow: {
         elevation: 50,
     },
+    darkMode: { backgroundColor: "black" },
+    darkModeText: { color: "white" },
+    bold: { fontWeight: "bold" },
 });
