@@ -4,7 +4,12 @@ import { StyleSheet, Text, View } from "react-native";
 export default function Index() {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Some Text</Text>
+            <View style={[styles.box, styles.blue]}>
+                <Text style={styles.text}>Light blue</Text>
+            </View>
+            <View style={[styles.box, styles.red]}>
+                <Text style={styles.text}>Light Green</Text>
+            </View>
         </View>
     );
 }
@@ -13,10 +18,21 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 60,
-        backgroundColor: "cyan",
+        backgroundColor: "pink",
     },
 
     text: {
         color: "green",
+    },
+    box: {
+        width: 100,
+        height: 100,
+        padding: 5,
+    },
+    blue: {
+        backgroundColor: "blue",
+    },
+    red: {
+        backgroundColor: "red",
     },
 });
