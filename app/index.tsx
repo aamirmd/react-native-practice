@@ -1,20 +1,16 @@
-import { StyleSheet, Text, View } from "react-native";
-// const logoImg = require("@/assets/images/icon.png");
+import Box from "@/components/Box";
+import { StyleSheet, View } from "react-native";
 
 export default function Index() {
     return (
         <View style={styles.container}>
-            <View style={[styles.box, styles.blue]}>
-                <Text style={styles.text}>Light blue</Text>
-            </View>
-            <View style={[styles.box, styles.red, styles.androidShadow]}>
-                <Text style={styles.text}>Light Green</Text>
-            </View>
-            <View style={styles.darkMode}>
-                <Text style={styles.darkModeText}>
-                    Some text in <Text style={styles.bold}>bold</Text>
-                </Text>
-            </View>
+            <Box style={{ backgroundColor: "8e9b00" }}>Box 1</Box>
+            <Box style={{ backgroundColor: "8e9b00" }}>Box 2</Box>
+            <Box style={{ backgroundColor: "8e9b00" }}>Box 3</Box>
+            <Box style={{ backgroundColor: "8e9b00" }}>Box 4</Box>
+            <Box style={{ backgroundColor: "8e9b00" }}>Box 5</Box>
+            <Box style={{ backgroundColor: "8e9b00" }}>Box 6</Box>
+            <Box style={{ backgroundColor: "8e9b00" }}>Box 7</Box>
         </View>
     );
 }
@@ -22,38 +18,7 @@ export default function Index() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingHorizontal: 10,
-        paddingVertical: 50,
-        backgroundColor: "pink",
+        borderWidth: 6,
+        borderColor: "red",
     },
-
-    text: {
-        color: "green",
-    },
-    box: {
-        width: "45%",
-        height: 100,
-        padding: 5,
-        borderWidth: 2,
-        borderRadius: 5,
-        borderColor: "yellow",
-        marginVertical: 10,
-    },
-    blue: {
-        backgroundColor: "blue",
-    },
-    red: {
-        backgroundColor: "red",
-    },
-    boxShadow: {
-        shadowColor: "black",
-        shadowOffset: { width: 6, height: 6 },
-        shadowOpacity: 0.6,
-    },
-    androidShadow: {
-        elevation: 50,
-    },
-    darkMode: { backgroundColor: "black" },
-    darkModeText: { color: "white" },
-    bold: { fontWeight: "bold" },
 });
