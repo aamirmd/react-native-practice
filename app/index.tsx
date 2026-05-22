@@ -18,8 +18,10 @@ export default function Index() {
 const styles = StyleSheet.create({
     container: {
         flexWrap: "wrap",
-        height: 300,
-        alignContent: "flex-end", // Used to align items in the cross axis
+        height: 350,
+        // rowGap: 10,
+        // columnGap: 40,
+        gap: 20,
         marginTop: 64,
         borderWidth: 6,
         borderColor: "red",
