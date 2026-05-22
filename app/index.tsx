@@ -17,10 +17,9 @@ export default function Index() {
 
 const styles = StyleSheet.create({
     container: {
-        // flexWrap: "wrap-reverse", // Wrap reverse means wrapping will start from reverse direction i.e. from end of cross axis
-        flexDirection: "row",
         flexWrap: "wrap",
         height: 300,
+        alignContent: "flex-end", // Used to align items in the cross axis
         marginTop: 64,
         borderWidth: 6,
         borderColor: "red",
