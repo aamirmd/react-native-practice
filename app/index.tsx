@@ -5,8 +5,15 @@ export default function Index() {
     return (
         <View style={styles.container}>
             <Box style={{ backgroundColor: "#8e9b00" }}>Box 1</Box>
-            <Box style={{ backgroundColor: "#2a9d8f" }}>Box 2</Box>
-            <Box style={{ backgroundColor: "#e9c46a" }}>Box 3</Box>
+            {/* Available space is distributed based on flex basis property instead of height property (or width depending on main axis) */}
+            <Box
+                style={{ backgroundColor: "#2a9d8f", flexBasis: 140, flex: 1 }}
+            >
+                Box 2
+            </Box>
+            <Box style={{ backgroundColor: "#e9c46a", height: 140, flex: 1 }}>
+                Box 3
+            </Box>
             <Box style={{ backgroundColor: "#f4a261" }}>Box 4</Box>
             <Box style={{ backgroundColor: "#e76f51" }}>Box 5</Box>
             <Box style={{ backgroundColor: "#457b9d" }}>Box 6</Box>
@@ -17,11 +24,7 @@ export default function Index() {
 
 const styles = StyleSheet.create({
     container: {
-        flexWrap: "wrap",
-        height: 350,
-        // rowGap: 10,
-        // columnGap: 40,
-        gap: 20,
+        flex: 1,
         marginTop: 64,
         borderWidth: 6,
         borderColor: "red",
