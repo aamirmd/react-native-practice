@@ -1,15 +1,17 @@
-import { Text, View } from "react-native";
+import { View, StyleSheet } from "react-native";
+import PokemonCard from "@/components/PokemonCard";
 
 export default function Index() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
-  );
+    return (
+        <View style={styles.container}>
+            <PokemonCard />
+        </View>
+    );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#f5f5f5",
+    },
+});
