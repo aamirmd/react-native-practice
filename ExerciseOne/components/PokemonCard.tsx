@@ -6,7 +6,6 @@ import {
     View,
     ImageSourcePropType,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 type PokemonCardProps = {
     name: string;
@@ -17,6 +16,21 @@ type PokemonCardProps = {
     weaknesses: string[];
 };
 
+const getTypeDetails = (type: PokemonCardProps["type"]) => {
+    switch (type.toLowerCase()) {
+        case "electric":
+            return { borderColor: "#FFD700", emoji: "⚡️" };
+        case "water":
+            return { borderColor: "#6493EA", emoji: "💧" };
+        case "fire":
+            return { borderColor: "#FF5733", emoji: "🔥" };
+        case "grass":
+            return { borderColor: "#66CC66", emoji: "🌿" };
+        default:
+            return { borderColor: "#A0A0A0", emoji: "❓" };
+    }
+};
+
 export default function PokemonCard({
     name,
     image,
@@ -25,8 +39,9 @@ export default function PokemonCard({
     moves,
     weaknesses,
 }: PokemonCardProps) {
+    const { borderColor, emoji } = getTypeDetails(type);
     return (
-        <SafeAreaView style={styles.card}>
+        <View style={styles.card}>
             <View style={styles.nameContainer}>
                 <Text style={styles.name}>{name}</Text>
                 <Text style={styles.hp}>❤️{hp}</Text>
@@ -39,17 +54,22 @@ export default function PokemonCard({
                 style={styles.image}
             />
 
-            <View>
-                <Text>{type}</Text>
+            <View style={styles.typeContainer}>
+                <View style={[styles.badge, { borderColor }]}>
+                    <Text>{emoji}</Text>
+                    <Text>{type}</Text>
+                </View>
             </View>
 
-            <View>
-                <Text>Moves: {moves.join(", ")}</Text>
+            <View style={styles.moves}>
+                <Text style={styles.movesText}>Moves: {moves.join(", ")}</Text>
             </View>
-            <View>
-                <Text>Weaknesses: {weaknesses.join(", ")}</Text>
+            <View style={styles.weaknesses}>
+                <Text style={styles.weaknessesText}>
+                    Weaknesses: {weaknesses.join(", ")}
+                </Text>
             </View>
-        </SafeAreaView>
+        </View>
     );
 }
 
@@ -89,6 +109,34 @@ const styles = StyleSheet.create({
         height: 150,
         borderColor: "blue",
         borderWidth: 3,
+        borderRadius: 20,
         marginBottom: 16,
+    },
+    typeContainer: {
+        flexDirection: "row",
+        marginBottom: 40,
+        justifyContent: "center",
+    },
+    badge: {
+        borderWidth: 4,
+        flexDirection: "row",
+        paddingVertical: 4,
+        paddingHorizontal: 20,
+        borderRadius: 16,
+        justifyContent: "space-evenly",
+    },
+    moves: {
+        marginBottom: 16,
+    },
+    movesText: {
+        fontSize: 16,
+        fontWeight: "bold",
+    },
+    weaknesses: {
+        marginBottom: 16,
+    },
+    weaknessesText: {
+        fontSize: 16,
+        fontWeight: "bold",
     },
 });
