@@ -1,5 +1,6 @@
-import { View, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import PokemonCard from "@/components/PokemonCard";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
     const charmanderData = {
@@ -38,9 +39,14 @@ export default function Index() {
         weaknesses: ["Ground"],
     };
     return (
-        <View style={styles.container}>
-            <PokemonCard {...pikachuData} />
-        </View>
+        <SafeAreaView style={styles.container}>
+            <ScrollView>
+                <PokemonCard {...pikachuData} />
+                <PokemonCard {...charmanderData} />
+                <PokemonCard {...bulbasaurData} />
+                <PokemonCard {...squirtleData} />
+            </ScrollView>
+        </SafeAreaView>
     );
 }
 
