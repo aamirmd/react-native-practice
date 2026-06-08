@@ -56,8 +56,8 @@ export default function PokemonCard({
 
             <View style={styles.typeContainer}>
                 <View style={[styles.badge, { borderColor }]}>
-                    <Text>{emoji}</Text>
-                    <Text>{type}</Text>
+                    <Text style={styles.typeText}>{emoji}</Text>
+                    <Text style={styles.typeText}>{type}</Text>
                 </View>
             </View>
 
@@ -124,6 +124,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         borderRadius: 16,
         justifyContent: "space-evenly",
+    },
+    typeText: {
+        fontSize: 20,
     },
     moves: {
         marginBottom: 16,
