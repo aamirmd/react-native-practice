@@ -27,12 +27,17 @@ export default function PokemonCard({
 }: PokemonCardProps) {
     return (
         <SafeAreaView style={styles.card}>
-            <View>
-                <Text>{name}</Text>
-                <Text>{hp}</Text>
+            <View style={styles.nameContainer}>
+                <Text style={styles.name}>{name}</Text>
+                <Text style={styles.hp}>❤️{hp}</Text>
             </View>
 
-            <Image source={image} accessibilityLabel={`${name} Pokemon`} />
+            <Image
+                source={image}
+                accessibilityLabel={`${name} Pokemon`}
+                resizeMode="contain"
+                style={styles.image}
+            />
 
             <View>
                 <Text>{type}</Text>
@@ -66,5 +71,24 @@ const styles = StyleSheet.create({
                 elevation: 5,
             },
         }),
+    },
+    nameContainer: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginBottom: 20,
+    },
+    name: {
+        fontSize: 30,
+        fontWeight: "bold",
+    },
+    hp: {
+        fontSize: 22,
+    },
+    image: {
+        width: "100%",
+        height: 150,
+        borderColor: "blue",
+        borderWidth: 3,
+        marginBottom: 16,
     },
 });
