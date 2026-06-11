@@ -1,19 +1,18 @@
-import CustomButton from "@/components/CustomButton";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import pokemonList from "@/data.json";
 
 export default function Index() {
     return (
         <SafeAreaView style={styles.safeContainer}>
-            <View style={styles.container}>
-                <View style={styles.box}>
-                    <Text style={styles.text}>Welcome!</Text>
-                    <CustomButton
-                        title="Press me"
-                        onPress={() => alert("Pressed!")}
-                    ></CustomButton>
-                </View>
-            </View>
+            <ScrollView>
+                {pokemonList.map((p) => (
+                    <View style={styles.card} key={p.id}>
+                        <Text style={styles.cardText}>{p.name}</Text>
+                        <Text style={styles.cardText}>{p.type}</Text>
+                    </View>
+                ))}
+            </ScrollView>
         </SafeAreaView>
     );
 }
@@ -21,29 +20,16 @@ export default function Index() {
 const styles = StyleSheet.create({
     safeContainer: {
         flex: 1,
-        backgroundColor: "plum",
+        backgroundColor: "#f5f5f5",
+        paddingHorizontal: 20,
     },
-    container: {
-        flex: 1,
-        backgroundColor: "plum",
-        borderColor: "red",
-        borderWidth: 4,
-        paddingTop: Platform.OS === "ios" ? 25 : 0,
+    card: {
+        padding: 10,
+        borderRadius: 8,
+        borderWidth: 2,
+        marginVertical: 4,
     },
-    box: {
-        padding: 0,
-    },
-    text: {
-        ...Platform.select({
-            ios: {
-                color: "purple",
-            },
-            android: {
-                color: "blue",
-            },
-        }),
-        fontSize: 24,
-        fontWeight: "bold",
-        textAlign: "center",
+    cardText: {
+        fontSize: 20,
     },
 });
